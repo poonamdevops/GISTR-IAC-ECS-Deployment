@@ -1,0 +1,33 @@
+# ---- Terraform ------------------------------------------------------------
+# Local state files (real state lives in S3 - never commit state)
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+
+# Crash log
+crash.log
+crash.*.log
+
+# Provider plugins, module cache, lock dir
+**/.terraform/*
+.terraform.lock.hcl.bak
+
+# Saved plans (may contain sensitive values)
+*.tfplan
+*.plan
+
+# ---- Secrets / sensitive --------------------------------------------------
+# Any *.auto.tfvars or secret var files
+*secret*.tfvars
+*secrets*.tfvars
+secrets.tfvars
+# Env exports (should never be in the repo)
+*-settings.json
+*.env
+*.env.json
+
+# ---- OS / editor ----------------------------------------------------------
+.DS_Store
+*.swp
+.idea/
+.vscode/
