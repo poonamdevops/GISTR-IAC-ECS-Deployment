@@ -36,6 +36,12 @@ variable "default_app" {
   type        = string
 }
 
+variable "enable_https" {
+  description = "When true: request an ACM cert, add HTTPS:443 listener, and redirect HTTP->HTTPS."
+  type        = bool
+  default     = false
+}
+
 variable "tags" {
   description = "Common tags."
   type        = map(string)

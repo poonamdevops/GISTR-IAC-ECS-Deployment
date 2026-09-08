@@ -107,6 +107,12 @@ variable "default_app" {
   default     = "frontend"
 }
 
+variable "enable_https" {
+  description = "Request ACM cert + add HTTPS:443 + HTTP->HTTPS redirect. Turn on after DNS is delegated to Cloudflare."
+  type        = bool
+  default     = false
+}
+
 # ---- ECS-on-EC2 settings --------------------------------------------------
 variable "ecs_instance_type" {
   description = "EC2 container instance type for the ECS cluster (BOQ: m6i.large)."

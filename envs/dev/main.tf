@@ -127,6 +127,7 @@ module "alb" {
   public_subnet_ids = module.vpc.public_subnet_ids
   alb_sg_id         = module.security.alb_sg_id
   default_app       = var.default_app
+  enable_https      = var.enable_https
 
   apps = {
     for a, cfg in var.apps : a => {

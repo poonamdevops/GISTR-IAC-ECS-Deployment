@@ -31,3 +31,9 @@ output "kms_key_arn" {
 output "secret_arns_by_app" {
   value = module.secrets.secret_arns_by_app
 }
+
+# CNAMEs to add in Cloudflare (DNS-only) to validate the ACM cert.
+output "acm_validation_records" {
+  description = "Add these in Cloudflare to validate HTTPS. Empty until enable_https=true."
+  value       = module.alb.acm_validation_records
+}
